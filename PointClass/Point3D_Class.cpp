@@ -26,13 +26,56 @@ class Point3D {
 		~Point3D() {
 			std::cout << "Destructor!\n";
 		}
+
+		void print() {
+			std::cout << "x: " << _x << " y: " << _y << " z: " << _z;
+			std::cout << std::endl;
+		}
+		
+		void set_x(double x) {
+			if (x >= 0) {
+				_x = x;
+			}
+		}
+
+		void set_y(double y) {
+			if (y >= 0) {
+				_y = y;
+			}
+		}
+
+		void set_z(double z) {
+			if (z >= 0) {
+				_z = z;
+			}
+		}
+
+		void set(double x, double y, double z) {
+			set_x(x);
+			set_y(y);
+			set_z(z);
+		}
+
+		double x() const {
+			return _x;
+		}
+
+		double y() const {
+			return _y;
+		}
+		
+		double z() const {
+			return _z;
+		}
 };
 
 int main() {
 	Point3D q;
 	Point3D t(8.3, 7.6, 1.2);
 	Point3D e(t);
-	
+
+	q.print();
+	e.print();
 
 	return 0;
 }
